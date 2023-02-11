@@ -1,0 +1,51 @@
+<div class="navbar">
+  <div >
+    <ul style="list-style:none;">
+      <li id="fondo-text">
+        wires
+      </li>
+    </ul>
+  </div>
+  <ul>
+    <li style="list-style:none; justify-content: center; list-style: none;display: flex;">
+
+      <a  [matMenuTriggerFor]="sendmenu" style="color: #CFD461;;" >
+        <img class="mx-2" src="../../assets/icons/chatbox-ellipses.svg">
+      </a>
+        <mat-menu #sendmenu="matMenu">
+          <a
+           mat-menu-item>
+            <span class="pr-5">User</span>
+          </a>
+        </mat-menu>
+      <a style="color: #CFD461;;" [matMenuTriggerFor]="menu">
+        <mat-icon class="mx-2" class="fs-2">menu</mat-icon>
+      </a>
+      <a>
+        <mat-menu #menu="matMenu">
+          <a style="font-size: 13px; font-weight: bolder;"
+           mat-menu-item>
+            <span class="pr-5">User</span>
+          </a>
+          <button routerLink="createMessages" mat-menu-item>
+            <img src="../../assets/icons/create.svg" width="27" alt="">
+            <span class="pr-5 mx-2">Create Messages</span>
+          </button>
+          <button  routerLink="sendMessages" mat-menu-item>
+            <img src="../../assets/icons/send.svg" width="27" alt="">
+            <span  class="pr-5 mx-2">Send Messages</span>
+          </button >
+          <button routerLink="allMessages"  mat-menu-item>
+            <img   src="../../assets/icons/chatbubbles-sharp.svg" width="27" alt="">
+            <span class="pr-5 mx-2">See all messages</span>
+          </button>
+          <button  mat-menu-item>
+            <img  src="../../assets/icons/log-in-sharp.svg" width="27" alt="">
+            <span (click)="Logout()" class="pr-5 mx-2">Logout</span>
+          </button>
+        </mat-menu>
+      </a>
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
