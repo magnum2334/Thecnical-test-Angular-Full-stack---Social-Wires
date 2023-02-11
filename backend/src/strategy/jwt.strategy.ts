@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable prettier/prettier */
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
@@ -13,11 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: any) {
-    const user = await this.authService.validateUser(payload);
-    if (!user) {
-      throw new UnauthorizedException();
-    }
-    return user;
+   validate(payload: any) {
+  
   }
 }

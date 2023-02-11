@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
-import bcrypt from 'bcrypt';
+import { hash, verify } from 'argon2';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export class UsersService {
   repository: any;
@@ -14,9 +14,16 @@ export class UsersService {
     private userRepository: Repository<User>,
   ) {}
 
-  createUser(body: CreateUserDto) {
+  async createUser(body: CreateUserDto) {
     const {username, email, fullName, password } = body;
-    return this.userRepository.save(body);
+     const saltRounds = await hash(password)
+
+    const user = new User();
+    user.username = username;
+    user.email = email;
+    user.fullName = fullName;
+    user.password = saltRounds;
+    return await this.userRepository.save(user);
   }
 
   findAll() {

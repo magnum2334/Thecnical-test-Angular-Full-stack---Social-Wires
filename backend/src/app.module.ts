@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    
     TypeOrmModule.forRoot({
       type: 'mariadb',
       host: 'localhost',

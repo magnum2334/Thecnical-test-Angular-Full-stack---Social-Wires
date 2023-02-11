@@ -1,4 +1,3 @@
-import { SendMessagesComponent } from './dashboard/send-messages/send-messages.component';
 import { CreateMessageComponent } from './dashboard/create-message/create-message.component';
 import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AllMessagesComponent } from './dashboard/all-messages/all-messages.component';
 import { MyMessagesComponent } from './dashboard/my-messages/my-messages.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 
@@ -23,10 +23,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
     children: [{
       path: '',
       redirectTo: 'dashboard/allMessages',
       pathMatch: 'full',
+
     },
     {
       path: 'myMessages',
@@ -35,10 +37,6 @@ const routes: Routes = [
     {
       path: 'createMessages',
       component: CreateMessageComponent,
-    },
-    {
-      path: 'sendMessages',
-      component: SendMessagesComponent,
     },
     {
       path: 'allMessages',

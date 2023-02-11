@@ -1,0 +1,71 @@
+body {
+  background: rgb(8, 21, 47);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+  color: #CFD461;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 5rem;
+}
+
+form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  border-radius: 20px;
+  border: 2px solid #e6e6e6;
+  padding: 1% 2%;
+  width: 100%;
+  background: transparent;
+  color: #CFD461
+}
+input {
+  border-radius: 20px;
+  border: 2px solid #e6e6e6;
+  padding: 1% 2%;
+  width: 100%;
+  background: transparent;
+  color: #CFD461;
+}
+label{
+  color: #CFD461;;
+}
+
+.card {
+  margin-bottom: 3rem;
+}
+.example-card {
+  max-width: 400px;
+  background-color: #cecece;
+  border-radius: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid #e6e6e6;
+  color: #CFD461;
+  border-radius: 50px;
+  padding: 2% 36%;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bolder;
+  margin-top: 2rem;
+}

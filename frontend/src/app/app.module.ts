@@ -14,7 +14,13 @@ import { CreateMessageComponent } from './dashboard/create-message/create-messag
 import { AllMessagesComponent } from './dashboard/all-messages/all-messages.component';
 import { MyMessagesComponent } from './dashboard/my-messages/my-messages.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SendMessagesComponent } from './dashboard/send-messages/send-messages.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +31,15 @@ import { SendMessagesComponent } from './dashboard/send-messages/send-messages.c
     AllMessagesComponent,
     MyMessagesComponent,
     PageNotFoundComponent,
-    SendMessagesComponent
+
   ],
   imports: [
+    HttpClientModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

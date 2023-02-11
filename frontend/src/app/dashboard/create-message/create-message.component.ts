@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-message.component.css']
 })
 export class CreateMessageComponent {
-
+  longText = `Join our affiliate marketing program and we'll help you get started. You can be up and running in minutes and start making money right away. We have the best platform in Latin America for sports predictions, so you can be sure that your audience is always looking for new predictions.`;
 }

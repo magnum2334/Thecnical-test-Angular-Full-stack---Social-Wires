@@ -1,1 +1,31 @@
-<p>register works!</p>
+<div style="background: white;">
+  <div class="d-md-none text-center " id="img-fondo">
+    <span id="fondo-text"> wires </span>
+  </div>
+  <div class="text-center py-1 text-white fs-2 " style="font-weight: 700;  background: linear-gradient(rgb(73, 73, 77), #182333);"> Welcome to Wires </div>
+  <section>
+    <form [formGroup]="create" (ngSubmit)="createuser()">
+      <div class="mt-5 my-2 text-center ">
+        <label for="basic-url">Nickname</label><br>
+        <input formControlName="username" id="username" type="text" placeholder="Nickname">
+      </div>
+      <div class="text-center ">
+        <label for="basic-url">Name</label><br>
+        <input type="text" formControlName="fullName" id="fullName" placeholder="full name">
+      </div>
+      <div class="text-center ">
+        <label for="basic-url">Email Adress</label><br>
+        <input formControlName="email"type="email" id="email" placeholder="Example@email.com">
+      </div>
+      <div class="text-center ">
+        <label for="basic-url">Password</label><br>
+        <input formControlName="password" id="password"  type="password" >
+      </div>
+      <div class=" mt-5 text-center ">
+        <button  class="button-create">
+          Create
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
