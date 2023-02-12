@@ -19,9 +19,13 @@ export class UsersController {
     return this.authService.loginUser(createAuthDto);
   }
   
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
+  @Post('allPublicationUser')
+  findAll(@Body() createAuthDto: CreateAuthDto) {
+    return this.usersService.allPublicationUser(createAuthDto);
+  }
+  @Post('allPublication')
+  All(@Body() createAuthDto: CreateAuthDto) {
+    return this.usersService.allPublicationUser(createAuthDto);
   }
 
   @Get(':id')

@@ -8,8 +8,15 @@ export class Publication {
   id: number;
 
   @Column()
+  tilte: string;
+
+  @Column()
   content: string;
+
+  @Column('datetime', { precision: 3, default: () => 'CURRENT_TIMESTAMP(3)' })
+  createdAt: string;
 
   @ManyToOne(type => User, user => user.publications)
   user: User;
 }
+

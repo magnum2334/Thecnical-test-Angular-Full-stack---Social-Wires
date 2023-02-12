@@ -1,55 +1,42 @@
-<!-- <div class="container">
-  <h1 class="text-center my-5"></h1>
-  <div class="row">
-    <div class=" col-md-12">
-      <form>
-
-      </form>
-    </div>
-  </div> -->
-
 <div class="container-fluid">
-  <div class="my-4 fs-2 " style="font-weight: bold;  color: #CFD461;"> All Message </div>
+  <div class=" fs-2 " style="font-weight: bold;  color: #CFD461;"> All Message </div>
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <div class="mx-4 form-group">
-        <label for="card-title">what i speach?:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="card-title"
-          placeholder="Enter card title"
-        />
-      </div>
-
-      <div class="mx-4 form-group">
-        <label for="date ">Date Select:</label>
-        <input type="date" class="form-control" id="date" required />
-      </div>
+      <form [formGroup]="filter" >
+        <div class="mx-4 form-group">
+          <label for="card-title">what i speach?:</label>
+          <input formControlName="tilte" (keyup)="applyFilter($event)"  type="text" class="form-control" id="card-title"
+            placeholder="Enter card title" />
+        </div>
+        <div class="mx-4 form-group">
+          <label for="date ">Date Select:</label>
+          <input  (keyup)="applyFilter($event)"  formControlName="createdAt" type="date" class="form-control" id="date" required />
+        </div>
+      </form>
     </div>
+
     <div class="col-md-3"></div>
   </div>
   <div class="row my-3">
-    <div class="col">
-      <mat-card class="example-card mx-4">
+    <div *ngFor="let item of myMessages" class="col">
+      <mat-card class="example-card my-2 mx-4">
         <mat-card-header>
-          <mat-card-title class="title-card my-2">Do you want to make a living by giving your sports
-            predictions?</mat-card-title>
+          <mat-card-title class="title-card my-2 fs-4 ">{{item.tilte}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>{{longText}}</p>
+          <span> {{item.content}}</span>
         </mat-card-content>
         <mat-card-footer>
           <div class="container">
             <div class="row">
               <div class="col-6">
                 <br>
-                <small>10:25 am 20/11/22</small>
+                <small>{{item.createdAt | date }}</small>
               </div>
               <div class="col-6">
                 <br>
-                <h4>Daniel Amateus</h4>
+                <small style="font-weight: bold;">{{item.user.username }}</small>
               </div>
             </div>
           </div>
@@ -57,4 +44,4 @@
       </mat-card>
     </div>
   </div>
-<div>
+  <div>

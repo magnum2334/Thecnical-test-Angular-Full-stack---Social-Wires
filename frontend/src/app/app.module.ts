@@ -20,6 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { FormatDatePipePipe } from './dashboard/create-message/format-date-pipe.pipe';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     AllMessagesComponent,
     MyMessagesComponent,
     PageNotFoundComponent,
-
+    FormatDatePipePipe,
   ],
   imports: [
     HttpClientModule,
@@ -47,7 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [FormatDatePipePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

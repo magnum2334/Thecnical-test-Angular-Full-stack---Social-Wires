@@ -19,7 +19,7 @@ export class AuthService {
   ) { }
 
   async loginUser(user: any) {
-    //carga de datos para generar el token
+    
     const payload = { email: user.email, password: user.password };
     const secretOrPrivateKey = 'secretOrPrivateKey'
     const token = jwt.sign(payload, secretOrPrivateKey, { expiresIn: '48h' });

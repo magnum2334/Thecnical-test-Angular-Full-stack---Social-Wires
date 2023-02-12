@@ -29,15 +29,17 @@ export class RegisterComponent {
   async createuser(){
     if (this.create.valid) {
     await  this.registerService.create(this.create.value).subscribe((res:any)=>{
-        this.router.navigate(['/dashboard']);
+
         if(res){
-          this.registerService.login({surname:this.create.value.email , password:this.create.value.password}).subscribe((res:any)=>{
-            localStorage.setItem(JSON.stringify(res), 'userAuth');
+          this.registerService.login({surname:this.create.value.username , password:this.create.value.password}).subscribe((res:any)=>{
+            localStorage.setItem('userAuth', JSON.stringify(res.accessToken), );
+            localStorage.setItem('user', JSON.stringify(res.user[0]));
+            this.router.navigate(['/dashboard/allMessages']);
           })
         }
       },
       err =>
-      this._snackBar.open("Verifica los datos por favor", "Cerrar", {
+      this._snackBar.open('el email ya fue registrado ', "Cerrar", {
         duration: 3000,
         panelClass: "font",
       })

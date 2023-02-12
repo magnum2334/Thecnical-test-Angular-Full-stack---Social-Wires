@@ -1,3 +1,4 @@
+import { Publication } from 'src/publications/entities/publication.entity';
 /* eslint-disable prettier/prettier */
 // /* eslint-disable prettier/prettier */
 
@@ -10,7 +11,7 @@ import { AuthService } from 'src/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
 
 @Module({
-imports: [TypeOrmModule.forFeature([User])],
+imports: [TypeOrmModule.forFeature([User ,Publication])],
 providers: [UsersService, AuthService, JwtService],
 controllers: [UsersController],
 })

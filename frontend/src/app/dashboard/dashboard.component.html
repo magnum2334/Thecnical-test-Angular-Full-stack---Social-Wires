@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" >
   <div >
     <ul style="list-style:none;">
       <li id="fondo-text">
@@ -25,7 +25,7 @@
         <mat-menu #menu="matMenu">
           <a style="font-size: 13px; font-weight: bolder;"
            mat-menu-item>
-            <span class="pr-5">User</span>
+            <span class="pr-5 fs-4">{{user.fullName}}</span>
           </a>
           <button routerLink="createMessages" mat-menu-item>
             <img src="../../assets/icons/create.svg" width="27" alt="">
