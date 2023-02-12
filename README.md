@@ -14,6 +14,6 @@ Social Wires es una red social que busca facilitar en un espacio publicaciones d
 
 #paso 1 imagen del .env del back https://user-images.githubusercontent.com/56561156/218288562-7d612e1a-47d8-438e-87fd-a3d9a1ef2a13.png crea la base de datos en maria db o cambia el tipo a mysql 
 
-#paso 2 si la base de datos fue creada utiliza npm i, inicia el servidor npm run start:dev
+#paso 2 si la base de datos fue creada ingresa a la carpeta backend  utiliza npm i , inicia el servidor con el comando npm run start:dev o nest start --watch
 
 #si todo salio bien ya tendras el front en la url http://localhost:4200/ y el back funcionado
